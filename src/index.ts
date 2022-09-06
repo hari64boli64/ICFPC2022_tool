@@ -22,7 +22,7 @@ const RES_NUM = document.getElementById("output_data_num") as HTMLElement;
 let seed = 1;
 const img = new Image();
 img.crossOrigin = "anonymous";
-img.src = `/input/${seed}.png`;
+img.src = `ICFPC2022_tool/input/${seed}.png`;
 
 img.addEventListener("load", () => {
   INPUT_ctx.drawImage(img, 0, 0);
