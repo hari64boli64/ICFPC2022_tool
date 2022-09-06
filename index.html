@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ICFPC2022</title>
+    <meta charset="utf-8">
+    <meta author="hari64">
+</head>
+
+<body>
+    <h1>ICFPC2022 Hand Tool</h1>
+    <hr />
+    <details>
+        ICFPC2022の手動解生成用補助ツールです。PCからご覧ください。お使いのブラウザによっては表示が崩れるかも知れません。<br>
+        右クリックで色を選択した後、Inputとある画像の上でドラッグをして矩形領域を決めることが出来ます。<br>
+        その後、okボタンかスペースキーを押すことで右側のOutputに選択した色の長方形を描画することが出来ます。<br>
+        seedは1から25まであり、<br>
+        backボタン、もしくは、ctrl+zで操作の取り消し、<br>
+        clearボタン、もしくは、ctrl+qで全操作をやり直すことが出来ます。<br>
+        最終的な出力はcopyボタンでコピーすることが出来ます。<br>
+
+        このツールの目的等は<a href="https://qiita.com/hari64/items/b24d39536734c0d55c9f">こちらの記事</a>をご参考下さい。
+    </details>
+    <hr />
+    <span style="user-select: none;">
+        <label for="seed">Seed:</label>
+        <input id="seed" type="number" style="width:100px; height:30px" value="1" min="1" max="25" />
+        <input id="ok_button" type="button" value="ok(space)" style="height:30px; width:100px" />
+        <input id="back_button" type="button" value="back(ctrl+z)" style="height:30px; width:100px" />
+        <input id="clear_button" type="button" value="clear(ctrl+q)" style="height:30px; width:100px" />
+        hover:<span class="color-cell" id="hovered-color"
+            style="display:inline-block; vertical-align: middle; width:90px;height:30px; border: solid 1px black;">
+        </span>
+        selected(right click):<span class="color-cell" id="selected-color"
+            style="display:inline-block; vertical-align: middle; width:90px;height:30px;border: solid 1px black;">
+        </span>
+        X:<span id="X">-1</span>
+        Y:<span id="Y">-1</span>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <input id="download_button" type="button" value="copy" />
+    </span>
+    <hr />
+    <table cellspacing="30px" style="height: 100%; width:1050px; table-layout: fixed; min-height: 530px;">
+        <thead style="user-select: none;">
+            <tr>
+                <th width="400px">Input</th>
+                <th width="400px">Output</th>
+                <th width="200px">Result</th>
+            </tr>
+        </thead>
+        <tbody style="text-align : center; font-size: large;">
+            <tr>
+                <td style="position: relative;">
+                    <canvas class="input_canvas" id="input" width="400" height="400"
+                        style="position: absolute; left: 0; top: 0; border: solid 1px black;"></canvas>
+                    <canvas class="input_canvas" id="input_rect" height="400" width="400"
+                        style="position: absolute; left: 0; top: 0; border: solid 1px black; z-index: 1;"></canvas>
+                </td>
+                <td style="position: relative;">
+                    <canvas id="output" width="400" height="400"
+                        style="position: absolute; left: 0; top: 0; border: solid 1px black;"></canvas>
+                </td>
+                <td>
+                    <div id="output_data"
+                        style="position:inherit; height: 100%; vertical-align : top; text-align : left; font-size: 20px; -webkit-text-stroke: 0.3px #000;">
+                        <div id="output_data_num">0</div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="index.js"></script>
+</body>
+
+</html>
