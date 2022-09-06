@@ -40,7 +40,7 @@ SEED_INPUT.addEventListener("change", (event: Event) => {
     }
   }
   seed = parseInt(target.value, 10);
-  img.src = `/input/${seed}.png`;
+  img.src = `/ICFPC2022_tool/input/${seed}.png`;
   INPUT_ctx.drawImage(img, 0, 0);
   CLEAR_BUTTON.click();
 });
