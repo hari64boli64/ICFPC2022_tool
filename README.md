@@ -10,7 +10,7 @@ ICFPC2022の手動解を求めるのに使用したプログラムです。
 
 ```bash
 npm install
-npm start
+npm run build
 ```
 
 ## Licence
